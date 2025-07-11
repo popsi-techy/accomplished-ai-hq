@@ -1,0 +1,20 @@
+/* src/pages/SchedulesPage.css */
+.schedules-page-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.schedules-page-container h2 {
+  font-size: 36px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.schedules-info-message {
+  font-size: 18px;
+  color: #555;
+  margin-top: 50px;
+  line-height: 1.6;
+}

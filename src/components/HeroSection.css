@@ -1,0 +1,59 @@
+/* src/components/HeroSection.css */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px); /* Adjust based on topbar height */
+  background-color: #f4f7f6; /* Light background */
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.company-name {
+  font-size: 28px;
+  color: #7f8c8d; /* Grey text */
+  margin-bottom: 10px;
+}
+
+.hero-tagline {
+  font-size: 48px;
+  font-weight: 300;
+  color: #2c3e50; /* Dark blue/grey */
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.hero-tagline strong {
+  font-weight: 700;
+  color: #3498db; /* Blue for emphasis */
+}
+
+.schedule-button {
+  background-color: #2ecc71; /* Green */
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-button:hover {
+  background-color: #27ae60; /* Darker green on hover */
+  transform: translateY(-2px);
+}
+
+.schedule-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
