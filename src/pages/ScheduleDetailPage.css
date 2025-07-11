@@ -1,0 +1,93 @@
+/* src/pages/ScheduleDetailPage.css */
+.schedule-detail-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-detail-loading,
+.schedule-detail-error,
+.schedule-detail-not-found {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 50px;
+}
+
+.schedule-detail-error {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.schedule-header {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.schedule-header h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.schedule-project-description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.ai-description-section,
+.scheduled-tasks-section {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.ai-description-section h3,
+.scheduled-tasks-section h3 {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.ai-description-content {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+}
+
+.ai-description-content p {
+    margin-bottom: 1em; /* Add space between paragraphs */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks from AI response */
+}
+
+
+.no-scheduled-tasks-message {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+  padding: 20px;
+  border: 1px dashed #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.note {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+/* Reusing tasks-table styles from ProjectDetailPage.css */
+/* Make sure ProjectDetailPage.css is imported or linked correctly in your build */

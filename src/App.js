@@ -9,8 +9,9 @@ import HomePage from './pages/HomePage';
 import AuthPage from './pages/AuthPage';
 import ProjectsPage from './pages/ProjectsPage';
 import SchedulesPage from './pages/SchedulesPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
+import ScheduleDetailPage from './pages/ScheduleDetailPage'; // Ensure this import is correct
 
-// Import global CSS or create one
 import './App.css';
 
 function App() {
@@ -35,8 +36,7 @@ function App() {
                 path="/projects/:projectId"
                 element={
                   <PrivateRoute>
-                    {/* Placeholder: This will be the detailed project view later */}
-                    <p>Project Detail Page Coming Soon!</p>
+                    <ProjectDetailPage />
                   </PrivateRoute>
                 }
               />
@@ -48,7 +48,15 @@ function App() {
                   </PrivateRoute>
                 }
               />
-              {/* Add a catch-all for 404 or redirect */}
+              {/* THIS IS THE CRITICAL ROUTE FOR SCHEDULE DETAIL PAGE */}
+              <Route
+                path="/schedules/:projectId" // Make sure this path EXACTLY matches the link from SchedulesPage.js
+                element={
+                  <PrivateRoute>
+                    <ScheduleDetailPage /> {/* Ensure this component name is correct */}
+                  </PrivateRoute>
+                }
+              />
               <Route path="*" element={<p>Page Not Found</p>} />
             </Routes>
           </main>

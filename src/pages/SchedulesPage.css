@@ -1,20 +1,109 @@
 /* src/pages/SchedulesPage.css */
+
 .schedules-page-container {
   padding: 30px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .schedules-page-container h2 {
-  font-size: 36px;
+  text-align: center;
   color: #2c3e50;
   margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
 }
 
-.schedules-info-message {
+.schedules-loading,
+.schedules-error,
+.schedules-not-logged-in {
+  text-align: center;
   font-size: 18px;
   color: #555;
   margin-top: 50px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.schedules-error {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.no-schedules-message {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  padding: 40px;
+  border: 2px dashed #e0e0e0;
+  border-radius: 10px;
+  margin-top: 30px;
+  background-color: #fdfdfd;
+}
+
+.scheduled-projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.scheduled-project-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-decoration: none; /* Remove underline for links */
+  color: inherit; /* Inherit text color */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scheduled-project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.scheduled-project-card h3 {
+  font-size: 24px;
+  color: #34495e;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Prevents long names from overflowing */
+}
+
+.scheduled-project-card p {
+  font-size: 16px;
+  color: #666;
   line-height: 1.6;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allows description to take up available space */
+}
+
+.scheduled-card-date {
+  font-size: 14px;
+  color: #888;
+  margin-top: 10px;
+  display: block;
+  text-align: right;
+}
+
+.view-schedule-button {
+  display: block;
+  width: fit-content;
+  margin: 15px auto 0 auto;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.view-schedule-button:hover {
+  background-color: #2980b9;
 }
