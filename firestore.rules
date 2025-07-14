@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Rule for the 'projects' collection
+    match /projects/{projectId} {
+      // Allow any authenticated user to create a project
+      // Allow any authenticated user to read any project (you might want to restrict this later to only their own)
+      allow create, read: if request.auth.uid != null;
+
+      // Allow update and delete ONLY if the requesting user's UID matches the 'userId' field in the project document
+      allow update, delete: if request.auth.uid == resource.data.userId;
+
+      // Rule for the 'tasks' sub-collection under each project
+      match /tasks/{taskId} {
+        // Tasks inherit permissions from their parent project
+        // i.e., an authenticated user can create a task if they can create the project
+        // and can update/delete a task if they own the parent project.
+        // The `get(/databases/$(database)/documents/projects/$(projectId)).data.userId`
+        // checks if the user owns the parent project.
+        allow create: if request.auth.uid != null; // Any logged in user can add a task to any project for now (adjust later if needed)
+        allow read, update, delete: if request.auth.uid == get(/databases/$(database)/documents/projects/$(projectId)).data.userId;
+      }
+    }
+
+    // You might want a general rule for users collection if storing public user profiles
+    // match /users/{userId} {
+    //   allow read: if true; // Public read for user profiles
+    //   allow write: if request.auth.uid == userId; // Users can only write their own profile
+    // }
+  }
+}
