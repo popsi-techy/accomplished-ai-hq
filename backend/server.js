@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000; // Use port from .env or default to 5000
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests only from your React frontend
+  origin: 'https://accomplished-ai-app.web.app/', // Allow requests only from your React frontend
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));

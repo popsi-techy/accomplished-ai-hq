@@ -44,7 +44,7 @@ const ProjectDetailPage = () => {
   const [isScheduling, setIsScheduling] = useState(false);
 
   // Define your backend URL (make sure it matches the port your Express server is listening on)
-  const BACKEND_API_URL = 'http://localhost:5000/api/schedule';
+  const BACKEND_API_URL = 'https://accomplished-ai-hq.onrender.com/api/schedule';
 
   useEffect(() => {
     if (!currentUser || !projectId) {
